@@ -33,7 +33,7 @@ This proposal attempts to reduce some of the risks associated with SMS delivery 
 
 Suppose a user receives the message "747723 is your ExampleCo authentication code." It's possible, even likely, that 747723 is a one-time code for use on `https://example.com`. But because there is no standard text format for SMS delivery of one-time codes, systems which want to make programmatic use of such codes must rely on heuristics, both to locate the code in the message and to associate the code with a website. Heuristics are prone to failure and may even be hazardous.
 
-End users shouldn't have to manually copy-and-paste one-time codes from SMSes to their browser, and codes sent by a site should only be provided to actual site which sent it.
+End users shouldn't have to manually copy-and-paste one-time codes from SMSes to their browser, and codes sent by a site should only be provided to the actual site which sent it.
 
 ## Goals
 
@@ -53,7 +53,7 @@ This proposal does not set out to
 
 To address this, we propose a lightweight text format that services may use for delivering one-time codes over SMS. The format associates the code with the website's origin. We call such codes **origin-bound one-time codes**, and we call such messages **origin-bound one-time code messages**.
 
-The message format is about as simple as it gets. Messages begin with (optional) human-readable text. The last line of the message contains the orgin and the code, with the prefix characters `"@"` and `"#"` denoting which is which. Here's an example:
+The message format is about as simple as it gets. Messages begin with (optional) human-readable text. The last line of the message contains the origin and the code, with the prefix characters `"@"` and `"#"` denoting which is which. Here's an example:
 
 ```text
 747723 is your ExampleCo authentication code.
