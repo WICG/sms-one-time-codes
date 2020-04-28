@@ -69,6 +69,21 @@ In this example,
 
 The characters `"@"` and `"#"` identify the origin and the code, respectively. (We can always introduce additional prefix characters in the future if it turns out we need to include additional information in these messages.)
 
+Some sites use third-party `iframe`s for authentication. In such cases, the third-party `iframe`'s origin can be specified using a `"%"` field after the code.
+
+```text
+747723 is your ExampleCo authentication code.
+
+@example.com #747723 %ecommerce.example
+```
+
+In this example,
+
+* `"https://example.com"` is the origin the code is associated with,
+* `"747723"` is the code,
+* `"https://ecommerce.example"` is the origin of the third-party `iframe`, and
+* `"747723 is your ExampleCo authentication code.\n\n"` is human-readable explanatory text.
+
 ## Benefits
 
 Adoption of this format would improve the reliability of systems which today heuristically extract one-time codes from SMS, with clear end-user benefit. It improves reliability of both extracting the code and also associating that code with an origin.
