@@ -68,26 +68,26 @@ User Agents determine whether or not to assist the user to provide an origin-bou
 1. Let |context| be |doc|'s [=Document/browsing context=].
 1. If |context| is a [=top-level browsing context=]. run these steps:
     1. If |otc|'s embedded origin is not `null`, return failure.
-    1. If |otc|'s top-level origin is [=same origin=] with |doc|'s [=Document/origin=], return `"strong"`.
-    1. If |otc|'s top-level origin is [=same site=] with |doc|'s [=Document/origin=], return `"weak"`.
+    1. If |otc|'s top-level origin is [=same origin=] with |doc|'s [=Document/origin=], return `"origin"`.
+    1. If |otc|'s top-level origin is [=same site=] with |doc|'s [=Document/origin=], return `"site"`.
     1. Return failure.
 1. If |otc|'s embedded origin is `null`, return failure.
-1. Let |strength| be `"strong"`.
-1. If |otc|'s embedded origin is not [=same origin=] with |doc|'s [=Document/origin=], set |strength| to `"weak"`.
+1. Let |match type| be `"origin"`.
+1. If |otc|'s embedded origin is not [=same origin=] with |doc|'s [=Document/origin=], set |match type| to `"site"`.
 1. If |otc|'s embedded origin is not [=same site=] with |doc|'s [=Document/origin=], return failure.
 1. Set |context| to its [=parent browsing context=].
 1. While |context| is not a [=top-level browsing context=], run these steps:
-    1. If |context|'s [=active document=]'s [=Document/origin=] is neither [=same origin=] with |otc|'s embedded origin nor |otc|'s top-level origin, set |strength| to `"weak"`.
+    1. If |context|'s [=active document=]'s [=Document/origin=] is neither [=same origin=] with |otc|'s embedded origin nor |otc|'s top-level origin, set |match type| to `"site"`.
     1. If |context|'s [=active document=]'s [=Document/origin=] is neither [=same site=] with |otc|'s embedded origin nor |otc|'s top-level origin, return failure.
     1. Set |context| to its [=parent browsing context=].
 1. If |context| is not a [=top-level browsing context=], return failure.
-1. If |context|'s [=active document=]'s [=Document/origin=] is [=same origin=] with |otc|'s top-level origin, return |strength|.
-1. If |context|'s [=active document=]'s [=Document/origin=] is [=same site=] with |otc|'s top-level origin, return `"weak"`.
+1. If |context|'s [=active document=]'s [=Document/origin=] is [=same origin=] with |otc|'s top-level origin, return |match type|.
+1. If |context|'s [=active document=]'s [=Document/origin=] is [=same site=] with |otc|'s top-level origin, return `"site"`.
 1. Return failure.
 
-If the above steps returned `"strong"` or `"weak"`, the User Agent may assist the user with providing the [=origin-bound one-time code=]'s code to the website.
+If the above steps returned `"origin"` or `"site"`, the User Agent may assist the user with providing the [=origin-bound one-time code=]'s code to the website.
 
-If the above steps returned `"weak"`, it might be prudent to indicate the [=origin-bound one-time code=]'s top-level and embedded origins to the user when assisting them.
+If the above steps returned `"site"`, it might be prudent to indicate the [=origin-bound one-time code=]'s top-level and embedded origins to the user when assisting them.
 
 If the above steps returned failure, the User Agent should not assist the user with providing the [=origin-bound one-time code=]'s code to the website.
 
