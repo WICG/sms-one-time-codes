@@ -77,8 +77,8 @@ User Agents determine whether or not to assist the user to provide an origin-bou
 1. If |otc|'s embedded origin is not [=same site=] with |doc|'s [=Document/origin=], return failure.
 1. Set |context| to its [=parent browsing context=].
 1. While |context| is not a [=top-level browsing context=], run these steps:
-    1. If |context|'s [=active document=]'s [=Document/origin=] is neither [=same origin=] with |otc|'s embedded origin nor |otc|'s top-level origin, set |match type| to `"site"`.
-    1. If |context|'s [=active document=]'s [=Document/origin=] is neither [=same site=] with |otc|'s embedded origin nor |otc|'s top-level origin, return failure.
+    1. If |context|'s [=active document=]'s [=Document/origin=] is [=same origin=] with neither |otc|'s embedded origin nor |otc|'s top-level origin, set |match type| to `"site"`.
+    1. If |context|'s [=active document=]'s [=Document/origin=] is [=same site=] with neither |otc|'s embedded origin nor |otc|'s top-level origin, return failure.
     1. Set |context| to its [=parent browsing context=].
 1. If |context| is not a [=top-level browsing context=], return failure.
 1. If |context|'s [=active document=]'s [=Document/origin=] is [=same origin=] with |otc|'s top-level origin, return |match type|.
