@@ -132,6 +132,7 @@ To <dfn export type="abstract-op">parse an origin-bound one-time code message</d
 1. Advance |position| by 1.
 1. Let |host| be the result of [=collecting a sequence of code points=] which are not [=ASCII whitespace=] from |line| with |position|.
 1. If |host| is the empty string, return failure.
+1. If |host| is not a [=valid domain string=], a [=valid IPv4-address string=], or a [=valid IPv6-address string=], return failure.
 1. If the code point at |position| within |line| is not U+0020 (SPACE), return failure.
 1. Advance |position| by 1.
 1. If the code point at |position| within |line| is not U+0023 (#), return failure.

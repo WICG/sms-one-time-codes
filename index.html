@@ -1222,9 +1222,9 @@ Possible extra rowspan handling
 	}
 </style>
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
-  <meta content="Bikeshed version 2891b22e, updated Thu Mar 26 15:21:43 2020 -0700" name="generator">
+  <meta content="Bikeshed version eb52c04d, updated Fri Mar 20 17:26:11 2020 -0700" name="generator">
   <link href="https://wicg.github.io/sms-one-time-codes/" rel="canonical">
-  <meta content="92c51c5068254e7665dfd870525bd015c3101ca4" name="document-revision">
+  <meta content="22b6cfbac093005327af353dbadbe6d9bb368047" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1413,7 +1413,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Origin-bound one-time codes delivered via SMS</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2020-04-02">2 April 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2020-06-15">15 June 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1551,6 +1551,8 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
      <p>Let <var>host</var> be the result of <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#collect-a-sequence-of-code-points" id="ref-for-collect-a-sequence-of-code-points">collecting a sequence of code points</a> which are not <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#ascii-whitespace" id="ref-for-ascii-whitespace">ASCII whitespace</a> from <var>line</var> with <var>position</var>.</p>
     <li data-md>
      <p>If <var>host</var> is the empty string, return failure.</p>
+    <li data-md>
+     <p>If <var>host</var> is not a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-domain-string" id="ref-for-valid-domain-string">valid domain string</a> or a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv4-address-string" id="ref-for-valid-ipv4-address-string">valid IPv4-address string</a> or a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv6-address-string" id="ref-for-valid-ipv6-address-string">valid IPv6-address string</a>, return failure.</p>
     <li data-md>
      <p>If the code point at <var>position</var> within <var>line</var> is not U+0020 (SPACE), return failure.</p>
     <li data-md>
@@ -1833,6 +1835,24 @@ for their valuable feedback on this proposal.</p>
     <li><a href="#ref-for-concept-url-scheme">2.1. Usage</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="term-for-valid-domain-string">
+   <a href="https://url.spec.whatwg.org/#valid-domain-string">https://url.spec.whatwg.org/#valid-domain-string</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-valid-domain-string">3.2. Parsing</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-valid-ipv4-address-string">
+   <a href="https://url.spec.whatwg.org/#valid-ipv4-address-string">https://url.spec.whatwg.org/#valid-ipv4-address-string</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-valid-ipv4-address-string">3.2. Parsing</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="term-for-valid-ipv6-address-string">
+   <a href="https://url.spec.whatwg.org/#valid-ipv6-address-string">https://url.spec.whatwg.org/#valid-ipv6-address-string</a><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-valid-ipv6-address-string">3.2. Parsing</a>
+   </ul>
+  </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
    <li>
@@ -1863,6 +1883,9 @@ for their valuable feedback on this proposal.</p>
     <ul>
      <li><span class="dfn-paneled" id="term-for-concept-url-origin" style="color:initial">origin</span>
      <li><span class="dfn-paneled" id="term-for-concept-url-scheme" style="color:initial">scheme</span>
+     <li><span class="dfn-paneled" id="term-for-valid-domain-string" style="color:initial">valid domain string</span>
+     <li><span class="dfn-paneled" id="term-for-valid-ipv4-address-string" style="color:initial">valid ipv4-address string</span>
+     <li><span class="dfn-paneled" id="term-for-valid-ipv6-address-string" style="color:initial">valid ipv6-address string</span>
     </ul>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
