@@ -130,16 +130,18 @@ To <dfn export type="abstract-op">parse an origin-bound one-time code message</d
 1. Let |line| be the [=last line=] of |message|, and |position| be 0.
 1. If the code point at |position| within |line| is not U+0040 (@), return failure.
 1. Advance |position| by 1.
-1. Let |host| be the result of [=collecting a sequence of code points=] which are not [=ASCII whitespace=] from |line| with |position|.
+1. Let |host| be the result of [=collecting a sequence of code points=] which are not [=whitespace=] from |line| with |position|.
 1. If |host| is the empty string, return failure.
 1. If |host| is not a [=valid domain string=], a [=valid IPv4-address string=], or a [=valid IPv6-address string=], return failure.
-1. If the code point at |position| within |line| is not U+0020 (SPACE), return failure.
+1. If the code point at |position| within |line| is not [=whitespace=], return failure.
 1. Advance |position| by 1.
 1. If the code point at |position| within |line| is not U+0023 (#), return failure.
 1. Advance |position| by 1.
-1. Let |code| be the result of [=collecting a sequence of code points=] which are not [=ASCII whitespace=] from |line| with |position|.
+1. Let |code| be the result of [=collecting a sequence of code points=] which are not [=whitespace=] from |line| with |position|.
 1. If |code| is the empty string, return failure.
 1. Return the [=origin-bound one-time code=] ((`"https"`, |host|, `null`, `null`), |code|).
+
+The <dfn type=abstract-op>whitespace</dfn> is either U+0020 (SPACE) or U+0009 (TAB).
 
 The <dfn type=abstract-op>last line</dfn> of |string| is the result of running these steps:
 
