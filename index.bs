@@ -165,10 +165,10 @@ On some platforms, User Agents might need access to all incoming SMS messages—
 
 Many thanks to
 Aaron Parecki,
+Elaine Knight,
 Eric Shepherd,
 Eryn Wells,
 Jay Mulani,
-Paul Knight,
 Ricky Mondello,
 and
 Steven Soneff

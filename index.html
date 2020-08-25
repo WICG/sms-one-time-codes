@@ -1175,7 +1175,7 @@ Possible extra rowspan handling
 		   1. When table < content column, centers table in column.
 		   2. When content < table < available, left-aligns.
 		   3. When table > available, fills available + scroll bar.
-		*/ 
+		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
 	}
@@ -1222,9 +1222,9 @@ Possible extra rowspan handling
 	}
 </style>
   <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
-  <meta content="Bikeshed version eb52c04d, updated Fri Mar 20 17:26:11 2020 -0700" name="generator">
+  <meta content="Bikeshed version 76c0936a, updated Fri Jun 12 19:44:53 2020 -0700" name="generator">
   <link href="https://wicg.github.io/sms-one-time-codes/" rel="canonical">
-  <meta content="22b6cfbac093005327af353dbadbe6d9bb368047" name="document-revision">
+  <meta content="1a62a05b30ac57b192df6aa5f2102553d69482b8" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1413,7 +1413,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Origin-bound one-time codes delivered via SMS</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2020-06-15">15 June 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2020-08-25">25 August 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1552,7 +1552,7 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
     <li data-md>
      <p>If <var>host</var> is the empty string, return failure.</p>
     <li data-md>
-     <p>If <var>host</var> is not a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-domain-string" id="ref-for-valid-domain-string">valid domain string</a> or a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv4-address-string" id="ref-for-valid-ipv4-address-string">valid IPv4-address string</a> or a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv6-address-string" id="ref-for-valid-ipv6-address-string">valid IPv6-address string</a>, return failure.</p>
+     <p>If <var>host</var> is not a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-domain-string" id="ref-for-valid-domain-string">valid domain string</a>, a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv4-address-string" id="ref-for-valid-ipv4-address-string">valid IPv4-address string</a>, or a <a data-link-type="dfn" href="https://url.spec.whatwg.org/#valid-ipv6-address-string" id="ref-for-valid-ipv6-address-string">valid IPv6-address string</a>, return failure.</p>
     <li data-md>
      <p>If the code point at <var>position</var> within <var>line</var> is not U+0020 (SPACE), return failure.</p>
     <li data-md>
@@ -1587,10 +1587,10 @@ A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/
    <h2 class="no-num heading settled" id="acknowedgements"><span class="content">Acknowledgements</span><a class="self-link" href="#acknowedgements"></a></h2>
    <p>Many thanks to
 Aaron Parecki,
+Elaine Knight,
 Eric Shepherd,
 Eryn Wells,
 Jay Mulani,
-Paul Knight,
 Ricky Mondello,
 and
 Steven Soneff
