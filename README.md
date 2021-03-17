@@ -69,12 +69,12 @@ In this example,
 
 The characters `"@"` and `"#"` identify the origin and the code, respectively. (We can always introduce additional prefix characters in the future if it turns out we need to include additional information in these messages.)
 
-Some sites use third-party `iframe`s for authentication. In such cases, the third-party `iframe`'s origin can be specified using a `"%"` field after the code.
+Some sites use third-party `iframe`s for authentication. In such cases, the third-party `iframe`'s origin can be specified using the same `"@"` field after the code.
 
 ```text
 747723 is your ExampleCo authentication code.
 
-@example.com #747723 %ecommerce.example
+@example.com #747723 @ecommerce.example
 ```
 
 In this example,
