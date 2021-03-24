@@ -8,18 +8,21 @@
 #
 #     npm install -g doctoc
 
-.PHONY: all clean spec update-explainer-toc
+specs   = $(patsubst %.bs,build/%.html,$(wildcard *.bs))
+
+.PHONY: all clean
 .SUFFIXES: .bs .html
 
-all: update-explainer-toc spec
+all: $(specs) update-explainer-toc
 
 update-explainer-toc:
 	doctoc README.md --title "## Table of Contents" > /dev/null
 
-spec: index.html
-
-.bs.html:
-	bikeshed spec $< $@
-
 clean:
-	rm -f index.html *~
+	rm -rf build *~
+
+build:
+	mkdir -p build
+
+build/%.html: %.bs Makefile build
+	bikeshed --die-on=warning spec $< $@
