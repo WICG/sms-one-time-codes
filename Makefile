@@ -13,7 +13,7 @@ specs   = $(patsubst %.bs,build/%.html,$(wildcard *.bs))
 .PHONY: all clean
 .SUFFIXES: .bs .html
 
-all: $(specs) update-explainer-toc
+all: $(specs)
 
 update-explainer-toc:
 	doctoc README.md --title "## Table of Contents" > /dev/null
