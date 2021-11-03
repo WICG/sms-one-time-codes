@@ -155,7 +155,7 @@ Trailing text in the last line is ignored. This is because we might identify add
 
 <div class="example">
 
-In the [=origin-bound one-time code message=] `"@example.com #747723 @ecommerce.example $future"`, the [=origin-bound one-time code message/top-level host=] is `"example.com"`, the [=code=] is `"747723"`, the [=origin-bound one-time code message/embedded host=] is `"ecommerce.example"`, and the [=explanatory text=] is `""`. The trailing text `" %future"` is ignored.
+In the [=origin-bound one-time code message=] `"@example.com #747723 @ecommerce.example %future"`, the [=origin-bound one-time code message/top-level host=] is `"example.com"`, the [=code=] is `"747723"`, the [=origin-bound one-time code message/embedded host=] is `"ecommerce.example"`, and the [=explanatory text=] is `""`. The trailing text `" %future"` is ignored.
 
 </div>
 
